@@ -18,7 +18,8 @@
                 <div class="left-items">{{computedTodos.length}} items</div>
                 <!--필터링 라디오 버튼-->
                 <label v-for="label in options">
-                    <input type="radio" v-model="current" :value="label.value">{{label.label}}
+                    <input id="radio" type="radio" v-model="current" :value="label.value">
+                    <label for="radio" class="left-items">{{label.label}}</label>
                 </label>
                 <button class="clear-completed-btn" @click="doAllRemove()">Reset</button>
             </div>
