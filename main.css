@@ -13,7 +13,7 @@ body {
 .todo-wrapper {
     justify-content: center;
     margin-top: 3rem;
-    min-width: 600px;
+    min-width: 400px;
 }
 
 .todo-title {
