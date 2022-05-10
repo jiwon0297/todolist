@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js To-Do List</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="todo-wrapper">
+        <div class="todo-title">To-Do List</div>
+        <div class="todo-box">
+            <div class="todo-bottom">
+                <div class="left-items">{{computedTodos.length}} items</div>
+                <!--필터링 라디오 버튼-->
+                <label v-for="label in options">
+                    <input type="radio" v-model="current" :value="label.value">{{label.label}}
+                </label>
+                <button class="clear-completed-btn" @click="doAllRemove()">Reset</button>
+            </div>
+
+            <!--신규 등록-->
+            <form class="todo-input-box" v-on:submit.prevent="doAdd">
+                <input type="text" ref="comment" class="todo-input" placeholder="해야 할 일을 입력해주세요.">
+                <button type="submit" class="complete-all-btn">✔</button>
+            </form>
+
+            <!--To-Do List-->
+            <ul class="todo-list">
+                <!--ToDo 요소 반복 출력-->
+                <li class="todo-item" v-for="todo in computedTodos" :key="todo.id"
+                    :class="{'todo-item checked':todo.state}">
+                    <!--요소 정보-->
+                    <div class="todo">{{todo.comment}}</div>
+                    <div class="checkbox" @click="doChangeState(todo)">
+                        <label for="checkbox" v-show="todo.state==1">✔</label>
+                    </div>
+                    <div class="button">
+                        <button class="delBtn" @click="doRemove(todo)">x</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
