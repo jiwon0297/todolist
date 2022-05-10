@@ -13,14 +13,14 @@ body {
 .todo-wrapper {
     justify-content: center;
     margin-top: 3rem;
-    min-width: 400px;
+    min-width: 300px;
 }
 
 .todo-title {
     padding: 2rem;
     text-align: center;
     color: rosybrown;
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 .todo-box {
@@ -65,7 +65,7 @@ button {
     text-align: center;
     border: 0;
     outline: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .todo-item {
@@ -101,7 +101,7 @@ button {
 }
 
 .todo {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 0 1rem;
     width: 80%;
 }
@@ -170,4 +170,8 @@ p.info {
     margin-top: 1.5rem;
     text-align: center;
     color: #ccc;
+}
+
+.left-items{
+    font-size: 0.9rem;
 }
